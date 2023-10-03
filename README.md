@@ -37,25 +37,25 @@ Developed using a stack that comprises Python, HTML, CSS, and JavaScript, **iden
 The application consists of multiple interactive routes:
 
 - **Login/Homepage**: Serves as the initial landing page elucidating the app's features, while also facilitating user login.
-- ![Screenshot of Login/Homepage]((https://github.com/korberlin/IDenty.fy/blob/main/identy.fy/static/ss/login.png))
+ ![Screenshot of Login/Homepage](https://github.com/korberlin/IDenty.fy/blob/main/identy.fy/static/ss/login.png))
 
 - **Register**: Allows new users to join the **identy.fy** community.
-- ![Screenshot of Register](https://github.com/korberlin/IDenty.fy/blob/main/identy.fy/static/ss/register.png)
+ ![Screenshot of Register](https://github.com/korberlin/IDenty.fy/blob/main/identy.fy/static/ss/register.png)
   
 - **Forgot**: An essential feature that aids users in resetting their forgotten passwords.
-- ![Screenshot of Forgot](https://github.com/korberlin/IDenty.fy/blob/main/identy.fy/static/ss/forgot.png)
+ ![Screenshot of Forgot](https://github.com/korberlin/IDenty.fy/blob/main/identy.fy/static/ss/forgot.png)
   
 - **Index**: Acts as the dashboard or welcome page for users post-login.
-- ![Screenshot of Index](https://github.com/korberlin/IDenty.fy/blob/main/identy.fy/static/ss/dashboard.png)
+ ![Screenshot of Index](https://github.com/korberlin/IDenty.fy/blob/main/identy.fy/static/ss/dashboard.png)
   
 - **Upload**: A dedicated space where users can submit long audio files either locally or via URLs.
-- ![Screenshot of Upload](https://github.com/korberlin/IDenty.fy/blob/main/identy.fy/static/ss/upload.png)
+ ![Screenshot of Upload](https://github.com/korberlin/IDenty.fy/blob/main/identy.fy/static/ss/upload.png)
   
 - **Playlists**: Enables users to oversee previously created playlists. Additionally, they can modify playlist names, delete tracks, or even the entire playlist, and directly export playlists to their Spotify account.
-- ![Screenshot of Playlists](https://github.com/korberlin/IDenty.fy/blob/main/identy.fy/static/ss/playlist.png)
+ ![Screenshot of Playlists](https://github.com/korberlin/IDenty.fy/blob/main/identy.fy/static/ss/playlist.png)
   
 - **Settings**: Offers users an array of options to enhance their app experience — from unlinking their Spotify account, altering passwords, updating email addresses, to even deleting their account.
-- ![Screenshot of Settings](https://github.com/korberlin/IDenty.fy/blob/main/identy.fy/static/ss/settings.png)
+ ![Screenshot of Settings](https://github.com/korberlin/IDenty.fy/blob/main/identy.fy/static/ss/settings.png)
 
 ### API Usage
 
