@@ -1,0 +1,89 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+
+<h1 class="playlist-title">Settings</h1>
+<!-- Spotify Account Section -->
+<div class="playlist" data-setting="spotify-account">
+    <div class="playlist-header">
+        <div class="expand-icon" onclick="toggleExpand(this)">&#9654;</div>
+        <span class="playlist-name">Spotify Account</span>
+    </div>
+    <div class="playlist-content" style="display:none;">
+        <div class="settings-info">
+            <span>Connected Spotify Account: </span>
+            <strong>{{ spotify_display_name }}</strong> 
+        </div>
+        <form action="{{ url_for('settings') }}" method="post" class="settings-form">
+            <input type="hidden" name="action" value="unlink">
+            <button type="submit" class="btn btn-warning settings-btn">Unlink Spotify Account</button>
+        </form>
+    </div>
+</div>
+
+<!-- Change Password Section -->
+<div class="playlist" data-setting="change-password">
+    <div class="playlist-header">
+        <div class="expand-icon" onclick="toggleExpand(this)">&#9654;</div>
+        <span class="playlist-name">Change Password</span>
+    </div>
+    <div class="playlist-content" style="display:none;">
+        <form action="{{ url_for('settings') }}" method="post" class="settings-form">
+            <input type="hidden" name="action" value="change_password">
+            <input type="password" name="old_password" placeholder="Old Password" required class="settings-input">
+            <input type="password" name="new_password" placeholder="New Password" required class="settings-input">
+            <input type="password" name="confirm_password" placeholder="Confirm New Password" required class="settings-input">
+            <button type="submit" class="btn btn-primary settings-btn">Change Password</button>
+        </form>
+    </div>
+</div>
+
+<!-- Change Email Section -->
+<div class="playlist" data-setting="change-email">
+    <div class="playlist-header">
+        <div class="expand-icon" onclick="toggleExpand(this)">&#9654;</div>
+        <span class="playlist-name">Change Email</span>
+    </div>
+    <div class="playlist-content" style="display:none;">
+        <form action="{{ url_for('settings') }}" method="post" class="settings-form">
+            <input type="hidden" name="action" value="change_email">
+            <input type="email" name="new_email" placeholder="New Email" required class="settings-input">
+            <input type="password" name="password" placeholder="Password" required class="settings-input">
+            <input type="date" name="dob" placeholder="Date of Birth" required class="settings-input">
+            <button type="submit" class="btn btn-primary settings-btn">Change Email</button>
+        </form>
+    </div>
+</div>
+
+<!-- Delete Account Section -->
+<div class="playlist" data-setting="delete-account">
+    <div class="playlist-header">
+        <div class="expand-icon" onclick="toggleExpand(this)">&#9654;</div>
+        <span class="playlist-name">Delete Account</span>
+    </div>
+    <div class="playlist-content" style="display:none;">
+        <form action="{{ url_for('settings') }}" method="post" class="settings-form">
+            <input type="hidden" name="action" value="delete_account">
+            <input type="email" name="email" placeholder="Email" required class="settings-input">
+            <input type="password" name="password" placeholder="Password" required class="settings-input">
+            <input type="date" name="dob" placeholder="Date of Birth" required class="settings-input">
+            <button type="submit" class="btn btn-danger settings-btn">Delete Account</button>
+        </form>
+    </div>
+</div>
+
+<script>
+function toggleExpand(element) {
+    const content = element.closest('.playlist').querySelector('.playlist-content');
+    if (content.style.display === 'none' || !content.style.display) {
+        content.style.display = 'block';
+        element.classList.add('expanded'); // Rotate the triangle
+    } else {
+        content.style.display = 'none';
+        element.classList.remove('expanded'); // Reset the triangle's rotation
+    }
+}
+</script>
+
+{% endblock %}

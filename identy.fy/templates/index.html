@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+{% set open_black_bg = True %}
+{% block content %}
+
+<div id="content" class="dashboard-page">
+    {% if username %}
+    <h1>Welcome back, {{ username }}!</h1>
+    {% else %}
+    <h1>Welcome to Your Dashboard!</h1>
+    {% endif %}
+    <div style="display: flex; justify-content: space-between; align-items: center; border: 1px solid #ff57a6; height: 60vh;">
+        <!-- Left Section -->
+        <div class="icon-text-container" style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; border-right: 1px solid #ff57a6; cursor: pointer;" onclick="location.href='{{ url_for('upload') }}'">
+            <img src="{{ url_for('static', filename='images/upload_icon.png') }}" alt="Upload Icon" style="width: 50px;" class="icon-color-adjust">
+            <p>Upload/Submit Set</p>
+        </div>
+        <!-- Right Section -->
+        <div class="icon-text-container" style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; cursor: pointer;" onclick="location.href='{{ url_for('playlists') }}'">
+            <img src="{{ url_for('static', filename='images/playlist_icon.png') }}" alt="Playlist Icon" style="width: 50px;" class="icon-color-adjust">
+            <p>Go to your playlists</p>
+        </div>
+    </div>
+    
+    </div>
+    <ul>
+        {% for upload in uploads %}
+        <li>{{ upload.name }} ({{ upload.tracks }} tracks)</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

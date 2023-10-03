@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}identy.fy{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="icon" href="/static/images/favicon.ico" type="image/x-icon">
+</head>
+<body {% if open_black_bg %}class="open-black-bg"{% endif %} {% block body_class %}{% endblock %}>
+    {% if not hide_navbar %}
+    <div class="navbar">
+        <a href="/" class="logo">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Identy.fy Logo" id="logo">
+        </a>
+        <div class="dropdown">
+            <i class="menu-icon">☰</i>
+            <div class="dropdown-content">
+                <a href="{{ url_for('settings') }}">Settings</a>
+                <a href="{{ url_for('logout') }}">Logout</a>
+            </div>
+        </div>
+    </div>
+        {% endif %}
+    
+    
+    
+    <div id="content">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <ul class="flashes">
+            {% for category, message in messages %}
+                <li class="{{ category }}">{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+        {% endwith %}
+
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

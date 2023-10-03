@@ -1,0 +1,160 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="special-content">
+    <h1 class="playlist-title">Your Playlists</h1>
+
+    {% for playlist in playlists %}
+    <div class="playlist" data-playlist-id="{{ playlist.id }}">
+        <div class="playlist-header">
+            <div class="expand-icon" onclick="toggleExpand(this)">&#9654;</div>
+            <input type="text" value="{{ playlist.name }}" class="playlist-name" readonly>
+            <span class="created-date">{{ playlist.created_date.strftime('%d.%m.%y') }}</span>
+            <img src="{{ url_for('static', filename='images/spotify_icon.png') }}" alt="Connect to Spotify" class="spotify-icon">
+            <button class="btn btn-danger delete-playlist">
+                <img src="{{ url_for('static', filename='images/trash_closed.png') }}" alt="Delete" class="trash-icon">
+                <img src="{{ url_for('static', filename='images/trash_open.png') }}" alt="Delete" class="trash-icon-hover">            
+            </button>
+            
+            <button class="btn btn-secondary edit-playlist-name">
+                <img src="{{ url_for('static', filename='images/edit_icon.png') }}" alt="Edit" class="edit-icon">
+            </button>
+            
+        </div>
+
+        <div class="playlist-content" style="display:none;">
+            <table class="playlist-table">
+                <thead>
+                    <tr>
+                        <th>Artist</th>
+                        <th>Track Name</th>
+                        <th>Release Date</th>
+                        <th>Listen</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for track in playlist.tracks %}
+                    <tr data-track-id="{{ track.id }}">
+                        <td>{{ track.artist }}</td>
+                        <td>{{ track.title }}</td>
+                        <td>{{ track.release_date }}</td>
+                        <td><a href="{{ track.song_link }}" target="_blank">Listen</a></td>
+                        <td>
+                            <button class="btn btn-danger delete-track">
+                                <img src="{{ url_for('static', filename='images/trash_closed.png') }}" alt="Delete" class="trash-icon">
+                                <img src="{{ url_for('static', filename='images/trash_open.png') }}" alt="Delete" class="trash-icon-hover">                            
+                            </button>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    {% endfor %}
+
+    <script>
+    function toggleExpand(element) {
+        const content = element.closest('.playlist').querySelector('.playlist-content');
+        if (content.style.display === 'none' || !content.style.display) {
+            content.style.display = 'block';
+            element.classList.add('expanded');
+        } else {
+            content.style.display = 'none';
+            element.classList.remove('expanded');
+        }
+    }
+    function initiateSpotifyPlaylistCreation(playlistId) {
+        window.location.href = `/create-spotify-playlist/${playlistId}`;
+    }
+    
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const deletePlaylistButtons = document.querySelectorAll('.delete-playlist');
+        const deleteTrackButtons = document.querySelectorAll('.delete-track');
+        const editNameButtons = document.querySelectorAll('.edit-playlist-name');
+
+        const spotifyIcons = document.querySelectorAll('.spotify-icon');
+
+        for (let icon of spotifyIcons) {
+            icon.addEventListener('click', function() {
+                const playlist = icon.closest('.playlist');
+                const playlistId = playlist.getAttribute('data-playlist-id');
+                initiateSpotifyPlaylistCreation(playlistId);
+            });
+        }
+            
+        for (let btn of deletePlaylistButtons) {
+            btn.addEventListener('click', function() {
+                const playlist = btn.closest('.playlist');
+                const playlistId = playlist.getAttribute('data-playlist-id');
+                fetch(`/delete-playlist/${playlistId}`, {
+                    method: 'POST'
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        playlist.remove();
+                        alert("Playlist deleted successfully!");
+                    } else {
+                        alert("Error deleting playlist.");
+                    }
+                });
+            });
+        }
+
+        for (let btn of deleteTrackButtons) {
+            btn.addEventListener('click', function() {
+                const trackRow = btn.closest('tr');
+                const trackId = trackRow.getAttribute('data-track-id');
+                fetch(`/delete-track/${trackId}`, {
+                    method: 'POST'
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        trackRow.remove();
+                        alert("Track deleted successfully!");
+                    } else {
+                        alert("Error deleting track.");
+                    }
+                });
+            });
+        }
+
+        for (let btn of editNameButtons) {
+            btn.addEventListener('click', function() {
+                const input = btn.closest('.playlist-header').querySelector('.playlist-name');
+                const playlist = btn.closest('.playlist');
+                const playlistId = playlist.getAttribute('data-playlist-id');
+                
+                if (input.readOnly) {
+                    input.readOnly = false;
+                    btn.innerHTML = '<img src="{{ url_for('static', filename='images/save_icon.png') }}" alt="Save" class="save-icon">';
+                } else {
+                    input.readOnly = true;
+                    btn.innerHTML = '<img src="{{ url_for('static', filename='images/save_icon.png') }}" alt="Save" class="save-icon">';
+                    fetch(`/rename-playlist/${playlistId}`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded'
+                        },
+                        body: `new_name=${encodeURIComponent(input.value)}`
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            alert("Playlist name updated successfully!");
+                        } else {
+                            alert("Error updating playlist name.");
+                        }
+                    });
+                }
+            });
+        }
+
+    });
+    </script>
+</div> 
+{% endblock %}

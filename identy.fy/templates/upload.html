@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+{% block body_class %}class="upload-page-body" style="background-image: url({{ url_for('static', filename='images/upload.jpeg') }});"{% endblock %}
+
+
+{% block content %}
+<div id="content" class="dashboard-page centered-content upload-page-content">
+
+
+    <h1>Upload DJ Set</h1>
+
+    <div class="upload-container">
+        <div class="toggle-container">
+            <label class="switch">
+                <input type="checkbox" id="uploadToggle">
+                <span class="slider round"></span>
+            </label>
+            <span id="toggle-label">Submit URL</span>
+        </div>
+
+        <form id="uploadForm" action="{{ url_for('upload') }}" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="uploadType" id="uploadType" value="file">
+            <div class="upload-formDiv" id="fileDiv">
+              <label for="file" class="custom-file-upload">Choose File</label>
+              <input type="file" name="file" id="file" accept=".wav,.mp3">
+          </div>
+          
+          <div class="upload-formDiv" id="urlDiv" style="display: none;">
+              <input type="text" name="url" id="url" placeholder="URL">
+          </div>
+
+            <div class="submit-btn-container">
+                <input type="submit" value="Upload" class="button small-upload-btn">
+            </div>
+        </form>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $('#uploadToggle').change(function() {
+            if ($(this).prop('checked')) {
+                $('#fileDiv').hide();
+                $('#urlDiv').show();
+                $('#toggle-label').text('Submit URL');
+                $('#uploadType').val('url');
+            } else {
+                $('#fileDiv').show();
+                $('#urlDiv').hide();
+                $('#toggle-label').text('Upload File');
+                $('#uploadType').val('file'); 
+            }
+        });
+    });
+    
+    </script>
+
+</div>
+{% endblock %}

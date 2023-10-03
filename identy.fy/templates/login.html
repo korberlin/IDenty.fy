@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Identy.fy - Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="icon" href="/static/images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <div id="login-container">
+    <div id="login-bar">
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Identy.fy Logo" id="logo">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <ul class="flashes login-flashes">
+            {% for category, message in messages %}
+                <li class="{{ category }}">{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+        {% endwith %}
+        <form action="{{ url_for('login') }}" method="post" id="login-group"> 
+            <input type="text" placeholder="Username" id="username" name="username"> 
+            <input type="password" placeholder="Password" id="password" name="password">  
+            <div id="login-actions">
+                <button type="submit" class="button">Login</button> 
+                <a href="/forgot" id="lost-password">Forgot password ?</a>
+            </div>
+        </form>
+    </div>
+    
+    <div id="main-content">
+        <h1>IDenty.fy</h1>
+        <p>Decompose DJ Sets Easily.</p>
+        <p>With advanced algorithms, transform DJ sets into individual playlists.</p>
+        <p>Unearth tracks and instantly craft Spotify playlists.</p>
+        <a href="{{ url_for('register') }}" class="create-account-link">
+          <button class="create-account-btn">CREATE A FREE ACCOUNT</button>
+        </a>
+    </div>
+
+  </div>
+</body>
+</html>

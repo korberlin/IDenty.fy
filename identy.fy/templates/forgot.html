@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% set hide_navbar = True %}
+
+{% block content %}
+<div id="forgot-container">
+    <div id="forgot-header">
+        <h2>Reset Password</h2>
+        <p>Enter your details to reset your password.</p>
+    </div>
+    <form action="/forgot" method="post">
+        <div class="input-group">
+            <label for="username">Username:</label>
+            <input type="text" name="username" required>
+        </div>
+        <div class="input-group">
+            <label for="email">Email:</label>
+            <input type="email" name="email" required>
+        </div>
+        <div class="input-group">
+            <label for="newpassword">New Password:</label>
+            <input type="password" name="newpassword" required>
+        </div>
+        <div class="input-group">
+            <label for="confirm_password">Confirm New Password:</label>
+            <input type="password" name="confirm_password" required>
+        </div>
+        <div class="submit-group">
+            <input type="submit" value="Reset Password" class="reset-btn">
+        </div>
+    </form>
+    <div class="back-group">
+        <a href="/login" class="back-btn">Back to Login</a>
+    </div>
+</div>
+{% endblock %}
