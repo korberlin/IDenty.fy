@@ -2,7 +2,7 @@
 
 # IDenty.fy
 
-**IDenty.fy** is a powerful web application developed to bridge the gap between audio track decomposition and playlist management on Spotify. By leveraging cutting-edge technology and user-friendly design, the app provides a seamless experience for users to transform long audio files or URLs into individual tracks and subsequently create or manage playlists on Spotify.
+**IDenty.fy** is a web application developed to bridge the gap between audio track decomposition and playlist management on Spotify. By leveraging API technology and user-friendly design, the app provides a seamless experience for users to transform long audio files or URLs into individual tracks and subsequently create or manage playlists on Spotify.
 
 ## Overview
 
