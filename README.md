@@ -40,22 +40,22 @@ The application consists of multiple interactive routes:
 - ![Screenshot of Login/Homepage]((https://github.com/korberlin/IDenty.fy/blob/main/identy.fy/static/ss/login.png))
 
 - **Register**: Allows new users to join the **identy.fy** community.
-- ![Screenshot of Register](path_to_screenshot_for_register_page.png)
+- ![Screenshot of Register](https://github.com/korberlin/IDenty.fy/blob/main/identy.fy/static/ss/register.png)
   
 - **Forgot**: An essential feature that aids users in resetting their forgotten passwords.
-- ![Screenshot of Forgot](path_to_screenshot_for_forgot_page.png)
+- ![Screenshot of Forgot](https://github.com/korberlin/IDenty.fy/blob/main/identy.fy/static/ss/forgot.png)
   
 - **Index**: Acts as the dashboard or welcome page for users post-login.
-- ![Screenshot of Index](path_to_screenshot_for_index_page.png)
+- ![Screenshot of Index](https://github.com/korberlin/IDenty.fy/blob/main/identy.fy/static/ss/dashboard.png)
   
 - **Upload**: A dedicated space where users can submit long audio files either locally or via URLs.
-- ![Screenshot of Upload](path_to_screenshot_for_upload_page.png)
+- ![Screenshot of Upload](https://github.com/korberlin/IDenty.fy/blob/main/identy.fy/static/ss/upload.png)
   
 - **Playlists**: Enables users to oversee previously created playlists. Additionally, they can modify playlist names, delete tracks, or even the entire playlist, and directly export playlists to their Spotify account.
-- ![Screenshot of Playlists](path_to_screenshot_for_playlists_page.png)
+- ![Screenshot of Playlists](https://github.com/korberlin/IDenty.fy/blob/main/identy.fy/static/ss/playlist.png)
   
 - **Settings**: Offers users an array of options to enhance their app experience — from unlinking their Spotify account, altering passwords, updating email addresses, to even deleting their account.
-- ![Screenshot of Settings](path_to_screenshot_for_settings_page.png)
+- ![Screenshot of Settings](https://github.com/korberlin/IDenty.fy/blob/main/identy.fy/static/ss/settings.png)
 
 ### API Usage
 
