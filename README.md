@@ -37,13 +37,13 @@ Developed using a stack that comprises Python, HTML, CSS, and JavaScript, **IDen
 The application consists of multiple interactive routes:
 
 - **Login/Homepage**: Serves as the initial landing page elucidating the app's features, while also facilitating user login.
- ![Screenshot of Login](https://github.com/korberlin/identy.fy/blob/main/identy.fy/static/ss/loginpage.png)
+ ![Screenshot of Login](https://github.com/korberlin/IDenty.fy/blob/main/identy.fy/static/ss/loginpage.png)
 
 - **Register**: Allows new users to join the **IDenty.fy** community.
- ![Screenshot of Register](https://github.com/korberlin/identy.fy/blob/main/identy.fy/static/ss/register.png)
+ ![Screenshot of Register](https://github.com/korberlin/IDenty.fy/blob/main/identy.fy/static/ss/register.png)
   
 - **Forgot**: An essential feature that aids users in resetting their forgotten passwords.
- ![Screenshot of Forgot](https://github.com/korberlin/identy.fy/blob/main/identy.fy/static/ss/forgot.png)
+ ![Screenshot of Forgot](https://github.com/korberlin/IDenty.fy/blob/main/identy.fy/static/ss/forgot.png)
   
 - **Index**: Acts as the dashboard or welcome page for users post-login.
  ![Screenshot of Index](https://github.com/korberlin/identy.fy/blob/main/identy.fy/static/ss/dashboard.png)
