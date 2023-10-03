@@ -1,12 +1,12 @@
 
 
-# identy.fy
+# IDenty.fy
 
-**identy.fy** is a powerful web application developed to bridge the gap between audio track decomposition and playlist management on Spotify. By leveraging cutting-edge technology and user-friendly design, the app provides a seamless experience for users to transform long audio files or URLs into individual tracks and subsequently create or manage playlists on Spotify.
+**IDenty.fy** is a powerful web application developed to bridge the gap between audio track decomposition and playlist management on Spotify. By leveraging cutting-edge technology and user-friendly design, the app provides a seamless experience for users to transform long audio files or URLs into individual tracks and subsequently create or manage playlists on Spotify.
 
 ## Overview
 
-Developed using a stack that comprises Python, HTML, CSS, and JavaScript, **identy.fy** provides a comprehensive platform with various functionalities:
+Developed using a stack that comprises Python, HTML, CSS, and JavaScript, **IDenty.fy** provides a comprehensive platform with various functionalities:
 
 - **User Authentication**: Streamlined processes allow users to register, log in, and even reset forgotten passwords with ease.
   
@@ -20,7 +20,7 @@ Developed using a stack that comprises Python, HTML, CSS, and JavaScript, **iden
 
 ## Technical Details
 
-**identy.fy** thrives on its technological underpinnings. Key technologies employed include:
+**IDenty.fy** thrives on its technological underpinnings. Key technologies employed include:
 
 - **Flask**: The backbone of the backend framework.
   
@@ -37,29 +37,29 @@ Developed using a stack that comprises Python, HTML, CSS, and JavaScript, **iden
 The application consists of multiple interactive routes:
 
 - **Login/Homepage**: Serves as the initial landing page elucidating the app's features, while also facilitating user login.
- ![Screenshot of Login](https://github.com/korberlin/IDenty.fy/blob/main/identy.fy/static/ss/login.png)
+ ![Screenshot of Login](https://github.com/korberlin/IDenty.fy/blob/main/IDenty.fy/static/ss/loginpage.png)
 
-- **Register**: Allows new users to join the **identy.fy** community.
- ![Screenshot of Register](https://github.com/korberlin/IDenty.fy/blob/main/identy.fy/static/ss/register.png)
+- **Register**: Allows new users to join the **IDenty.fy** community.
+ ![Screenshot of Register](https://github.com/korberlin/IDenty.fy/blob/main/IDenty.fy/static/ss/register.png)
   
 - **Forgot**: An essential feature that aids users in resetting their forgotten passwords.
- ![Screenshot of Forgot](https://github.com/korberlin/IDenty.fy/blob/main/identy.fy/static/ss/forgot.png)
+ ![Screenshot of Forgot](https://github.com/korberlin/IDenty.fy/blob/main/IDenty.fy/static/ss/forgot.png)
   
 - **Index**: Acts as the dashboard or welcome page for users post-login.
- ![Screenshot of Index](https://github.com/korberlin/IDenty.fy/blob/main/identy.fy/static/ss/dashboard.png)
+ ![Screenshot of Index](https://github.com/korberlin/IDenty.fy/blob/main/IDenty.fy/static/ss/dashboard.png)
   
 - **Upload**: A dedicated space where users can submit long audio files either locally or via URLs.
- ![Screenshot of Upload](https://github.com/korberlin/IDenty.fy/blob/main/identy.fy/static/ss/upload.png)
+ ![Screenshot of Upload](https://github.com/korberlin/IDenty.fy/blob/main/IDenty.fy/static/ss/upload.png)
   
 - **Playlists**: Enables users to oversee previously created playlists. Additionally, they can modify playlist names, delete tracks, or even the entire playlist, and directly export playlists to their Spotify account.
- ![Screenshot of Playlists](https://github.com/korberlin/IDenty.fy/blob/main/identy.fy/static/ss/playlist.png)
+ ![Screenshot of Playlists](https://github.com/korberlin/IDenty.fy/blob/main/IDenty.fy/static/ss/playlist.png)
   
 - **Settings**: Offers users an array of options to enhance their app experience — from unlinking their Spotify account, altering passwords, updating email addresses, to even deleting their account.
- ![Screenshot of Settings](https://github.com/korberlin/IDenty.fy/blob/main/identy.fy/static/ss/settings.png)
+ ![Screenshot of Settings](https://github.com/korberlin/IDenty.fy/blob/main/IDenty.fy/static/ss/settings.png)
 
 ### API Usage
 
-**identy.fy** seamlessly integrates with two APIs:
+**IDenty.fy** seamlessly integrates with two APIs:
 
 - **AUDD**: The AUDD audio recognition API facilitates the decomposition of lengthy audio files into individual tracks. To optimize efficiency, the API settings are tuned to request decomposition at intervals of 2-3 minutes, though users can tweak these settings to be more dense, like every 12 seconds.
 
@@ -75,12 +75,12 @@ The application consists of multiple interactive routes:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/korberlin/identy.fy.git
+   git clone https://github.com/korberlin/IDenty.fy.git
    ```
 
 2. Move into the project directory:
    ```bash
-   cd identy.fy
+   cd IDenty.fy
    ```
 
 3. Install all required packages:
@@ -109,10 +109,10 @@ The application consists of multiple interactive routes:
 
 ## Error Handling
 
-To ensure a smooth user experience, **identy.fy** comes with a comprehensive error-handling mechanism, equipped with global error handlers and intuitive flash messages that guide users during unexpected events.
+To ensure a smooth user experience, **IDenty.fy** comes with a comprehensive error-handling mechanism, equipped with global error handlers and intuitive flash messages that guide users during unexpected events.
 
 ## License
 
-**identy.fy** is licensed under the MIT License.
+**IDenty.fy** is licensed under the MIT License.
 
 --- 
